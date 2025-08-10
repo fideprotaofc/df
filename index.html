@@ -1,0 +1,90 @@
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>carregando...</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+          0 0 5px #9b59b6,
+          0 0 10px #9b59b6,
+          0 0 20px #8e44ad,
+          0 0 30px #8e44ad,
+          0 0 40px #9b59b6,
+          0 0 55px #9b59b6,
+          0 0 75px #8e44ad;
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0.6;
+      }
+    }
+
+    .neon-text {
+      animation: flicker 3s infinite;
+      color: #9b59b6;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      user-select: none;
+    }
+
+    @keyframes spin-neon {
+      0% {
+        transform: rotate(0deg);
+        box-shadow:
+          0 0 5px #9b59b6,
+          0 0 10px #9b59b6,
+          0 0 20px #8e44ad,
+          0 0 30px #8e44ad;
+      }
+      50% {
+        box-shadow:
+          0 0 15px #9b59b6,
+          0 0 25px #9b59b6,
+          0 0 40px #8e44ad,
+          0 0 50px #8e44ad;
+      }
+      100% {
+        transform: rotate(360deg);
+        box-shadow:
+          0 0 5px #9b59b6,
+          0 0 10px #9b59b6,
+          0 0 20px #8e44ad,
+          0 0 30px #8e44ad;
+      }
+    }
+
+    .spinner {
+      border: 6px solid transparent;
+      border-top-color: #9b59b6;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      animation: spin-neon 1.5s linear infinite;
+      box-shadow:
+        0 0 10px #9b59b6,
+        0 0 20px #8e44ad,
+        0 0 30px #9b59b6;
+    }
+  </style>
+</head>
+<body class="bg-[#121217] flex items-center justify-center min-h-screen px-4">
+  <main class="flex flex-col items-center gap-8">
+    <h1 class="neon-text text-4xl sm:text-5xl md:text-6xl select-none">Carregando...</h1>
+    <div class="spinner" role="status" aria-label="Spinner de carregamento neon roxo"></div>
+  </main>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = 'telaprincipal.html';
+    }, 3000);
+  </script>
+</body>
+</html>
